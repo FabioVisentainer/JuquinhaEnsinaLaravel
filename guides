@@ -1,0 +1,117 @@
+https://www.youtube.com/watch?v=Yi1NfLkflyU&ab_channel=DaveHollingworth
+
+-- instalando laravel (terminal)
+composer create-project laravel/laravel example-app (trocar o example para o nome do app)
+
+-- remover o ; no arquivo php.ini
+;extension=xsl
+extension=zip
+
+Controller - app/Http/Controllers/file.php
+Views - resources/views/file.php
+Rotas - routes/file.php
+component-view = resources/views/components/file.php
+models - app/Models/file.php
+
+-- criar novos projetos
+composer global require laravel/installer
+laravel new example-app
+
+-- o programa precisa de rota, views, controladores e 
+-- iniciar o servidor local
+cd example-app
+php artisan serve
+
+
+-- utilizando o artisan
+-- lista de comandos
+php artisan list
+
+-- criando uma nova view (colocar o help antes do make para ver informações), views são as paginas web
+php artisan make:view
+ex: (criando a view hello)
+php artisan make:view hello
+php artisan make:view products.index (cria uma view index numa subpasta products)
+
+-- criando um novo controlador (controladores são responsáveis por guardar o código da aplicação (metodos que definimos para aquela rota), 
+    assim não sobrcerregando o arquivo route, e deixando o código mais organizado)
+php artisan make:controller UserController
+ex: 
+php artisan make:controller ProductController
+
+
+-- Criando components para serem utilizados em todas as views
+php artisan make:component Alert
+php artisan make:component forms.input --view
+Ex: 
+php artisan make:component layout --view   
+
+
+-- criando migração da base de dados (alterar dados de conexão no .env)
+php artisan make:migration create_flights_table
+php artisan make:migration create_products_table
+-- configurar a lista e rodar para criar as bases de dados
+php artisan migrate
+
+
+-- criando models (interação da base de dados com o controller para repassar a view)
+php artisan make:model Flight
+php artisan make:model Product
+
+
+-- instalando a debugbar para acompanhar
+composer require barryvdh/laravel-debugbar --dev
+
+
+-- criando formas compontentes novamente
+php artisan make:component products.form --view
+-- criando request para realizar chamadas de funções dentro controller
+php artisan make:request SaveProductRequest
+
+
+-- verificando todas as rotas
+php artisan route:list
+
+
+
+
+--- gerando cidades e estados para o brasil (id=1)
+php artisan import:cities-and-states
+
+
+
+codigo para quando for inserir um novo usuario
+use Illuminate\Support\Facades\Hash;
+
+// When creating a new user
+$user = new User();
+$user->username = $request->username;
+$user->password_hash = Hash::make($request->password); // Hash the password
+$user->save();
+
+
+-- setando um novo password para o usuario pelo terminal
+php artisan tinker
+use App\Models\User; // Replace User with your actual model name if different
+$user = User::find(1); // Replace 1 with the actual user ID
+$user->password_hash = Hash::make('admin'); // Replace 'new_password' with the actual new password
+$user->save();
+exit
+
+
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
+$userId = 1; // Replace with the actual user ID
+$user = User::find($userId);
+if ($user) {
+    $user->password_hash = Hash::make('yourNewPassword'); // Hash the new password
+    $user->save(); // Save the user
+}
+
+
+
+
+
+.\ngrok config add-authtoken 2npngez34USmFuduU6twUzSqjQJ_6sBs3FBfz8h3ARAa7tMow
+.\ngrok http 8000

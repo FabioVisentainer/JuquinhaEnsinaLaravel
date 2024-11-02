@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navTitle{
+  @apply text-black font-londrina text-xl md:text-2xl lg:text-3xl my-6 md:my-0 dark:text-white hover:text-neutral-500 hover:md:text-4xl hover:text-3xl hover:transition-all duration-200 dark:hover:text-neutral-500;
+}
+
+.navText {
+  @apply p-3 md:flex md:items-center z-[1] md:z-auto md:static absolute md:left-0 md:py-0 sm:py-4 md:pl-0 md:opacity-100 transition-all ease-in-out duration-500 text-left backdrop-blur-md rounded-lg md:backdrop-filter-none md:bg-transparent text-center md:mx-0 w-full ;
+}
+
+.invertColor {
+  @apply dark:invert dark:hover:invert-50 hover:invert-50 duration-200;
+}
+
+.body{
+  @apply dark:bg-[#0A0F1E] transition-all duration-300;
+}
+
+.pageTitle {
+  @apply text-center text-black font-londrina text-6xl md:text-8xl dark:text-white my-8 -z-20 relative pointer-events-none;
+}
+
+.dadCards{
+  @apply flex justify-center flex-wrap text-center gap-x-8 m-7;
+}
+
+.card{
+  @apply text-white font-londrina font-bold rounded-3xl hover:scale-125 duration-150 m-8;
+}
+
+.inputBox {
+  @apply p-2 border rounded-2xl w-full hover:bg-slate-300 dark:hover:bg-slate-300 transition-all duration-300 ease-in-out font-londrina;
+}
+
+.label {
+  @apply w-full text-black dark:text-white font-londrina -mb-4 ml-6 text-xl mt-3;
+}
+
+.form {
+  @apply flex flex-col items-center gap-5 w-[80%] sm:w-[60%] md:w-[35%] lg:w-[20%];
+}
+
+.blueButton {
+  @apply text-2xl font-londrina p-2 mt-4 bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 ease-in-out;
+}
+
+.contCenter {
+  @apply flex flex-col items-center justify-center gap-4 my-16;
+}
