@@ -1,50 +1,55 @@
 <x-layout>
     <body class="body bg-slate-50">
-    <nav class="flex justify-between items-center">
-      <div class="p-5 md:flex md:justify-between max-[770px]:hidden">
-        <div class="max-[770px]:hidden">
-          <!-- Div do botao de voltar -->
-          <a href="{{ route('Mainhome') }}"><img class="invertColor cursor-pointer" src="../images/voltar.png" alt="Botao de voltar a pagina" width="40px"></a>
-        </div>
+  <nav class="flex justify-between items-center">
+  <div class="p-5 md:flex md:justify-between max-[770px]:hidden">
+    <div class="max-[770px]:hidden">
+      <!-- Div do botao de voltar -->
+      <a href="{{ route('Mainhome') }}"><img class="invertColor cursor-pointer pointer-events-auto" src="../images/voltar.png" alt="Botao de voltar a pagina" width="40px"></a>
+    </div>
+  </div>
 
-        <!-- Div esquerda da nav -->
-    <ul class="navText opacity-0 top-[120px]">
-      <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0 ml-5">
-        <a href="{{ route('students.home') }}" ><p class="navTitle">Inicio</p></a>
-      </li>
-      <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0 ml-5">
-        <a href="{{ route('students.activity.table') }}"><p class="navTitle">Atividades</p></a>
-      </li>
-      <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0 ml-5">
-        <a href="{{ route('students.homework.table') }}"><p class="navTitle">Tarefas</p></a>
-      </li>
-      <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0 ml-5">
-        <a href="{{ route('students.videos.home') }}"><p class="navTitle">Videos</p></a>
-      </li>
-    </ul>
-      </div>
-    
-</div>
+  
+  <!-- Div esquerda da nav -->
 
-<img class="hamburger invertColor cursor-pointer transition-all ease-out duration-500 md:hidden block max-[800px]:ml-3" src="../images/hamburger.png" alt="Hamburger" width="45px">
-<img class="x invertColor cursor-pointer hidden transition-all ease-linear duration-500 md:hidden max-[800px]:ml-3" src="../images/x.png" alt="Exit hamburguer" width="30px">
+  <div class="pointer-events-none">
+    <ul class="navText opacity-0 top-[120px] gap-4">
+    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+      <a href="{{ route('students.home') }}"><p class="navTitle">Inicio</p></a>
+    </li>
+    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+      <a href="{{ route('students.activity.table') }}"><p class="navTitle">Atividades</p></a>
+    </li>
+    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+      <a href="{{ route('students.homework.table') }}"><p class="navTitle">Tarefas</p></a>
+    </li>
+    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+      <a href="{{ route('students.videos.home') }}"><p class="navTitle">Videos</p></a>
+    </li>
+  </ul>
+  </div>
+  
+ 
+    <div>
+      <img class="hamburger invertColor cursor-pointer transition-all ease-out duration-500 md:hidden block max-[800px]:-ml-60" src="../images/hamburger.png" alt="Hamburger" width="45px">
+      <img class="x invertColor cursor-pointer hidden transition-all ease-linear duration-500 md:hidden max-[800px]:-ml-60" src="../images/x.png" alt="Exit hamburguer" width="30px">
+    </div>
 
-<div class="flex gap-8 p-5"> <!-- Div direita da nav -->
-<div>
-<img class="moon cursor-pointer drop-shadow-[0_0px_16px_rgba(4,15,140)]" src="../images/lua.png" alt="" width="40px">
-<img class="sun cursor-pointer dark:drop-shadow-[0_0px_30px_rgba(255,232,150)] hidden" src="../images/sol.png" alt="" width="40px">
-</div>
+  <div class="flex gap-8 p-5">
+    <!-- Div direita da nav -->
+    <div>
+      <img class="moon cursor-pointer drop-shadow-[0_0px_16px_rgba(4,15,140)]" src="../images/lua.png" alt="" width="40px">
+      <img class="sun cursor-pointer dark:drop-shadow-[0_0px_30px_rgba(255,232,150)] hidden" src="../images/sol.png" alt="" width="40px">
+    </div>
 
-<div>
-<a href="#"><img class="invertColor cursor-pointer" src="../images/notificacao.png" alt="Botao de notificacoes" width="40px"></a>
-</div>
+    <div>
+      <a href="#"><img class="invertColor cursor-pointer" src="../images/notificacao.png" alt="Botao de notificacoes" width="40px"></a>
+    </div>
 
-<div>
-<img src="../images/skillos.png" alt="Company image" width="40px">
-</div>
-</div>
-
-</nav>
+    <div>
+      <img src="../images/skillos.png" alt="Company image" width="40px">
+    </div>
+  </div>
+  </nav>
   
     <main>
       <div class="total relative top-1 transition-all duration-300 ease-in-out">

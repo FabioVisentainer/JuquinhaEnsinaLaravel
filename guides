@@ -113,5 +113,21 @@ if ($user) {
 
 
 
-.\ngrok config add-authtoken 2npngez34USmFuduU6twUzSqjQJ_6sBs3FBfz8h3ARAa7tMow
+.\ngrok config add-authtoken xxxxxxx
 .\ngrok http 8000
+
+
+
+ENFIANDO A MERDA NO G   IT
+git status                                              # Verifique o status do repositório
+git add .                                               # Adicione todos os arquivos modificados
+git commit -m "Sua mensagem de commit aqui"             # Faça o commit
+git push                                                # Envie para o repositório remoto
+
+
+git remote -v           # Ver Repositorios Remotos (a pasta do github)
+git branch              # Verificar a branch (A que tiver um * ) - essa merda tem que falar "main"
+git status              # Verifique o status do repositório - não da pra entender mas deve ta escrito "working" em algum lugar
+git add .
+git commit -m "sua mensagem"
+git push origin sua-branch

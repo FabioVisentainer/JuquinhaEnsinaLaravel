@@ -13,6 +13,16 @@ export default {
     darkMode: 'class', // Mantendo darkMode fora do objeto theme
     theme: {
         extend: {
+                    screens: {
+            'sm': '640px',
+            // => @media (min-width: 640px) { ... }
+      
+            'md': '1024px',
+            // => @media (min-width: 1024px) { ... }
+      
+            'lg': '1280px',
+            // => @media (min-width: 1280px) { ... }
+          },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 londrina: ['Londrina Solid', 'sans-serif'],

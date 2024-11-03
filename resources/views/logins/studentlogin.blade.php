@@ -33,7 +33,7 @@
               <label for="" class="invertColor font-londrina">Lembrar minha senha</label>
         </div>
         
-        <input type="submit" value="Entrar" class="text-2xl font-londrina p-2 mt-4 bg-blue-500 text-white hover:bg-blue-600 rounded-full transition-all duration-300 ease-in-out w-full md:w-[75%] lg:w-[70%]">
+        <input type="submit" value="Entrar" class="text-2xl font-londrina p-2 mt-4 bg-blue-500 text-white hover:bg-blue-600 rounded-full transition-all duration-300 ease-in-out w-full">
         
     </form>
 

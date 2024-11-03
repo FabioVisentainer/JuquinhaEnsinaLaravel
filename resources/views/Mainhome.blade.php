@@ -5,8 +5,8 @@
       <div class="p-5 md:flex md:justify-between max-[770px]:hidden">
       </div>
       <!-- Div esquerda da nav -->
-      <img class="hamburger invertColor cursor-pointer transition-all ease-out duration-500 md:hidden block max-[800px]:ml-3" src="./images/hamburger.png" alt="Hamburger" width="45px">
-      <img class="x invertColor cursor-pointer hidden transition-all ease-linear duration-500 md:hidden max-[800px]:ml-3" src="./images/x.png" alt="Exit hamburguer" width="30px">
+      <img class="hamburger invertColor cursor-pointer transition-all ease-out duration-500 opacity-0 block max-[800px]:ml-3" src="./images/hamburger.png" alt="Hamburger" width="45px">
+      <img class="x invertColor cursor-pointer transition-all ease-linear duration-500 opacity-0 max-[800px]:ml-3" src="./images/x.png" alt="Exit hamburguer" width="30px">
   
       <div class="flex gap-8 p-5">
         <!-- Div direita da nav -->
