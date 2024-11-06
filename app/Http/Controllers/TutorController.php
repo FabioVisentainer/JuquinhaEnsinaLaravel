@@ -88,6 +88,7 @@ class TutorController extends Controller
             $studentUserId = $students->first()->student_user_id;
         }
 
+        //dd($students, $tutorId, $unreadCount );
         // Passa os dados dos alunos e o aluno selecionado (se houver) para a view
         return view('tutors.tutorhome', compact('students', 'studentUserId', 'unreadCount'));
     }

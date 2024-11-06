@@ -7,7 +7,7 @@
     <!-- incluindo stilos importados -->
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">  --}}
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">   --}}
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
 </head>
 <body class="body">

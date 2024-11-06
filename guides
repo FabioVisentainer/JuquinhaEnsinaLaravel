@@ -116,6 +116,7 @@ if ($user) {
 .\ngrok config add-authtoken xxxxxxx
 .\ngrok http 8000
 
+git init        #inicia um novo repositorio
 
 
 ENFIANDO A MERDA NO G   IT
@@ -131,3 +132,12 @@ git status              # Verifique o status do repositório - não da pra enten
 git add .
 git commit -m "sua mensagem"
 git push origin sua-branch
+
+
+passo a passo do zero
+https://github.com/seu-usuario/nome-do-repositorio.git
+git init
+git add .
+git commit -m "Commit inicial"
+git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git
+git push -u origin main

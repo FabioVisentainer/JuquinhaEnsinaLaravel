@@ -31,11 +31,11 @@
 }
 
 .inputBox {
-  @apply p-2 border rounded-2xl w-full hover:bg-slate-300 dark:hover:bg-slate-300 transition-all duration-300 ease-in-out font-londrina;
+  @apply p-2 border rounded-xl w-full hover:bg-slate-300 dark:hover:bg-slate-300 transition-all duration-300 ease-in-out font-londrina mb-6;
 }
 
 .label {
-  @apply w-full text-black dark:text-white font-londrina -mb-4 ml-6 text-xl mt-3;
+  @apply w-full text-black dark:text-white font-londrina -mb-4 ml-6 text-xl;
 }
 
 .form {

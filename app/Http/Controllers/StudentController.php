@@ -131,31 +131,8 @@ class StudentController extends Controller
             ->select('tb_activities.*')
             ->get();
 
-        // Recupera as atividades completas do aluno
-        $CompleteActivities = DB::table('activities_by_student')
-            ->where('student_user_id', $studentUserId)
-            ->get();
-
-        // Recupera todas as atividades com o status de conclusão do aluno
-        $activities = DB::table('activities_by_class')
-            ->join('tb_activities', 'activities_by_class.activity_id', '=', 'tb_activities.activity_id')
-            ->leftJoin('activities_by_student', function($join) use ($studentUserId) {
-                $join->on('activities_by_class.activity_id', '=', 'activities_by_student.activity_id')
-                    ->where('activities_by_student.student_user_id', $studentUserId);
-            })
-            ->where('activities_by_class.class_id', $classInfo->class_id)
-            ->where('activities_by_class.is_active', true)
-            ->select(
-                'tb_activities.activity_id',
-                'tb_activities.activity_name',
-                'activities_by_student.times_completed',
-                DB::raw('IF(activities_by_student.times_completed IS NOT NULL, "Completed", "Available") as status'),
-                'activities_by_student.updated_at as last_completed_time'
-            )
-            ->get();
-
         // Retorna a visão com as informações das atividades
-        return view('tutors.activities.activities_table', compact('student', 'studentUserId', 'classInfo', 'AvailableActivities', 'CompleteActivities', 'activities'));
+        return view('students.activities_table', compact('student', 'studentUserId', 'classInfo', 'AvailableActivities'));
     }
 
     // ##################################################################
@@ -183,7 +160,7 @@ class StudentController extends Controller
             ->select('tb_videos.*', 'tb_teachers.teacher_name')
             ->orderBy('tb_videos.updated_at', 'desc')
             ->get();
-    
+        
         // Retorna a visão com a lista de vídeos
         return view('students.videos.videos_home', compact('videos'));
     }

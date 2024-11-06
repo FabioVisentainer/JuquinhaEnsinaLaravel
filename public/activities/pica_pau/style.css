@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Londrina Solid";
+    user-select: none;
+}
+
+body {
+    text-align: center;
+    background-color: lightblue;
+}
+
+#tabuleiro {
+    width: 28rem;
+    height: 28rem;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: url("./fundo.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#tabuleiro div {
+    width: 9rem; 
+    height: 9rem;
+    background-image: url("./obstaculo.png");
+    background-size: cover;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+#tabuleiro div img {
+    width: 5rem;
+    height: 5rem;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.tela-fim-jogo {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    display: none;
+}
+
+.tela-fim-jogo.mostrar {
+    display: flex;
+}
+
+#jogar-novamente {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: lightgreen;
+    border-radius: 8px;
+    font-size: 2vh;
+    margin-top: 20px;
+}
+
+#jogar-novamente:hover {
+    background-color: yellowgreen;
+}
+
+div.cabecalho {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 1rem;
+    gap: 30%;
+    background-color: lightblue; 
+    text-align: center;
+}
+
+.cronometro {
+    font-size: 1.2em; 
+}
+
+.container {
+    align-items: center; 
+    text-align: center;
+}
+
+.voltar {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1.5em;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+    width: 3em;
+    border-radius: 8px; 
+    border-style: solid;
+}
+
+.voltar:hover {
+    background-color: red;
+}
+
+#pontuacao {
+    padding-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+    div.cabecalho {
+        margin-left: 4rem;
+        min-width: 300px;
+        gap: 3rem;
+    }
+
+    div.cronometro {
+        margin-left: 80px;
+    }
+
+    p#pontuacao {
+        margin-left: 9rem;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 426px) {
+    p#pontuacao {
+        margin-left: 5rem;
+    }
+}

@@ -60,7 +60,7 @@ class CoordinatorController extends Controller
     // #                alunos/responsáveis/professores                 #
     // ##################################################################
 
-   // ==================== PÁGINA HOME DOS REGISTROS ====================
+    // ==================== PÁGINA HOME DOS REGISTROS ====================
     public function registries_home_page()
     {
         // Verifica se o usuário tem o papel de 'administrator' ou 'coordinator'
@@ -2012,6 +2012,7 @@ class CoordinatorController extends Controller
     }
     
 }       
+
 
 
 

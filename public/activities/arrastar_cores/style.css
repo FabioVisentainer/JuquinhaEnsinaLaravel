@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Londrina Solid";
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: lightblue;
+    margin: 0; 
+    justify-content: center;
+    overflow: auto;
+    padding-top: 2rem;
+}
+
+main {
+    flex: 1; 
+    width: 100%; 
+    overflow-x: auto; 
+}
+
+.cabecalho {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    justify-content: center;
+    width: 100%; 
+    gap: 20em; 
+    margin-bottom: 2%;
+}
+
+.cronometro {
+    font-size: 1.2em; 
+}
+
+.voltar {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1.5em;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+    width: 3em;
+    border-radius: 8px;
+    border-style: solid;
+}
+
+.voltar:hover {
+    background-color: red;
+}
+
+.kanban {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap; 
+    overflow-x: auto; 
+    overflow-y: hidden; 
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.5rem;
+    min-width: 9rem; /*Isso muda tudo*/
+    max-width: 9rem; 
+    border-radius: 9px;
+    transition: border-color 0.3s; 
+    user-select: none; 
+}
+
+.item {
+    width: 100%;
+    height: 4rem; 
+    border-radius: 100px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.507);
+    border: 2px 2px lightblue;
+    cursor: grab; 
+    transition: transform 0.2s; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    outline: none;
+}
+
+.item:hover {
+    transform: scale(1.05); 
+}
+
+.arrastando {
+    opacity: 0.5;
+    transform: rotate(5deg); 
+}
+
+@keyframes soltar {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.item.arrastando {
+    opacity: 0.5;
+}
+
+.tela-fim-jogo {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Londrina Solid";
+    font-size: 4.5vh;
+    display: none;
+}
+
+.tela-fim-jogo.mostrar {
+    display: flex;
+}
+
+#jogar-novamente {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: lightgreen;
+    border-radius: 8px;
+    font-size: 2vh;
+    margin-top: 20px;
+}
+
+#jogar-novamente:hover {
+    background-color: yellowgreen;
+}
+
+
+@media (min-width: 320px) and (max-width: 426px) {
+
+    .coluna {
+        min-width: 3rem;
+        min-height: 10rem;
+        gap: 0.3rem;
+    }
+
+    .item {
+        height: 2rem; 
+        border-radius: 10px;
+        font-size: 10px;
+    }
+
+    .kanban {
+        gap: 0.5rem;
+        padding: 0.5rem;
+        margin-bottom: 30%;
+    }
+
+    .cabecalho {
+        gap: 3rem;
+        font-size: 0.8rem;
+        margin-bottom: 30%;
+    }
+
+    .voltar {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 1025px) {
+    .coluna {
+        min-width: 5rem;
+        min-height: 15rem;
+        gap: 0.5rem;
+    }
+
+    .item {
+        height: 2.5rem; 
+        border-radius: 10px;
+    }
+
+    .cabecalho {
+        font-size: 1rem;
+        gap: 10rem;
+    }
+}

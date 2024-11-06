@@ -80,6 +80,8 @@ function onToggleMenu(e){
         // Remove as classes anteriores
         list.classList.remove('top-[20px]', 'opacity-100');
         list.classList.add('top-[-120px]', 'opacity-0'); // Volta ao estado inicial
+        list.classList.remove('pointer-events-auto');
+        list.classList.add('pointer-events-none'); 
         total.classList.remove('top-96'); 
         total.classList.add('top-1');// 
 
@@ -87,9 +89,13 @@ function onToggleMenu(e){
         // Se estiver abrindo o menu
         list.classList.remove('top-[-120px]', 'opacity-0'); // Remove as classes de estado inicial
         list.classList.add('top-[20px]', 'opacity-100'); // Adiciona classes para abrir o menu
+        list.classList.remove('pointer-events-none');
+        list.classList.add('pointer-events-auto'); 
         total.classList.remove('top-1'); 
         total.classList.add('top-96');
     }
 }
 // Invocar o check de tema no carregamento inicial
 themeCheck();
+
+

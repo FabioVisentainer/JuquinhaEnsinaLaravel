@@ -9,21 +9,17 @@
     <table>
         <thead>
             <tr>
-                <th>Activity ID</th>
                 <th>Activity Name</th>
-                <th>Status</th>
-                <th>Times Complete</th>
-                <th>Last Completed Time</th>
+                <th>Start Activity</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($activities as $activity)
+            @foreach ($AvailableActivities as $activity)
                 <tr>
-                    <td>{{ $activity->activity_id }}</td>
                     <td>{{ $activity->activity_name }}</td>
-                    <td>{{ $activity->status }}</td>
-                    <td>{{ $activity->times_completed }}</td>
-                    <td>{{ $activity->last_completed_time ?? 'N/A' }}</td>
+                    <td>
+                        <a href="{{ asset($activity->activity_url) }}" target="_blank">Start</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
