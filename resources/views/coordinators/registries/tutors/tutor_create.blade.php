@@ -68,7 +68,7 @@
                 <form action="{{ route('coordinators.registries.tutors.store') }}" method="POST" class="form">
                     @csrf
                     <x-registries.tutor_form />
-                    <input type="submit" value="Registrar Docente" class="blueButton rounded-full sm:w-[90%] md:w-[75%] lg:w-[70%]">
+                    <input type="submit" value="Registrar Tutor" class="blueButton rounded-full sm:w-[90%] md:w-[75%] lg:w-[70%]">
                 </form>
             </div>
         </div>

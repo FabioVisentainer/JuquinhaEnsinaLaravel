@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUMP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-board">
+        <div class="ground"></div>
+        <img src="clouds.png" alt="" class="clouds">
+        <img src="tree.png" alt="" class="tree">
+        <img src="bird.gif" alt="" class="bird">
+        <img src="pipe.png" class="pipe">
+        <img src="coin.png" alt="" class="coin">
+        <img src="mario.gif" alt="" class="mario">
+        <div class="timer">Tempo: 0s</div> 
+        <div class="score">Pontuação: 0</div>
+        <div class="material-symbols-outlined">
+            <button class="voltar">
+            <span class="material-symbols-outlined"><a href="index.html">keyboard_return</a></span>
+            </button>
+        </div>
+        <div class="game-over-screen">
+            <h2>Fim de jogo!</h2>
+            <p id="final-score"></p>
+            <p id="final-time"></p>
+            <p id="novamente">CLIQUE Para tentar novamente</p>
+            <div class="material-symbols-outlined">
+                <button class="voltar">
+                <span class="material-symbols-outlined"><a href="index.html">keyboard_return</a></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+    </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+<script src="script.js"></script>
+</html>

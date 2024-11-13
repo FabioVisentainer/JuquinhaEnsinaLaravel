@@ -20,10 +20,10 @@
 
     <button type="button" id="fetchAddressBtn">Fetch Address</button> --}}
 
-    {{-- <!-- Hidden Fields to Lock City, State, and Country -->
+    <!-- Hidden Fields to Lock City, State, and Country -->
     <input type="hidden" name="city_id" id="city_id" value="{{ $tutor->address->city_id ?? '' }}">
     <input type="hidden" name="state_id" id="state_id" value="{{ $tutor->address->state_id ?? '' }}">
-    <input type="hidden" name="country_id" id="country_id" value="{{ $tutor->address->country_id ?? '' }}"> --}}
+    <input type="hidden" name="country_id" id="country_id" value="{{ $tutor->address->country_id ?? '' }}">
 
     <!-- City, State, and Country Display -->
     {{-- <div id="addressDisplay" style="display: {{ isset($tutor) ? 'block' : 'none' }};">
@@ -62,30 +62,34 @@
     <!-- Password -->
     {{-- <label for="password">Password</label>
     <input type="password" name="password" id="password" placeholder="Leave blank to keep current password" autocomplete="off"> --}}
+            
+    <div class="text-black text-xl bg-red-100 font-londrina p-2 border-red-200 rounded-lg">
+                      <x-errors/>
+                    </div>
 
             @if(isset($tutor))
             <!-- Exibe o nome de usuário como somente leitura -->
             <label for="usuario" class="label">Usuário para login</label> 
             <input type="text" name="username" id="username" value="{{ $tutor->user->username }}" required autocomplete="off" readonly class="inputBox bg-zinc-100 dark:bg-slate-100">
             @else
-                <label for="usuario" class="label">Usuário para login</label>
-                <input type="text" name="username" id="username" value="{{ old('username') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
+                <label for="usuario" class="label hidden">Usuário para login</label>
+                <input type="text" name="username" id="username" value="{{ old('username') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100 hidden">
             @endif
 
             <label for="usuario" class="label">Senha</label> 
-            <input type="password" name="password" id="password" autocomplete="off" placeholder="Deixar Branco para manter senha" class="inputBox bg-zinc-100 dark:bg-slate-100">
+            <input type="password" name="password" id="password" placeholder="senha" autocomplete="off" placeholder="Deixar Branco para manter senha" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
-            <label for="usuario" class="label">Numero de Contato</label> 
-            <input type="text" name="tutor_contact_number" id="tutor_contact_number" value="{{ $tutor->tutor_contact_number ?? old('tutor_contact_number') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
+            <label for="usuario" class="label">Numero de Contato <span class="pl-2 font-londrina text-sm text-black dark:text-white">  *Apenas numeros</span></label> 
+            <input type="text" name="tutor_contact_number" id="tutor_contact_number" placeholder="00000000000" value="{{ $tutor->tutor_contact_number ?? old('tutor_contact_number') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
             <label for="usuario" class="label">Email de Contato</label> 
-            <input type="email" name="tutor_contact_mail" id="tutor_contact_mail" value="{{ $tutor->tutor_contact_mail ?? old('tutor_contact_mail') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
+            <input type="email" name="tutor_contact_mail" id="tutor_contact_mail" placeholder="exemplo@gmail.com" value="{{ $tutor->tutor_contact_mail ?? old('tutor_contact_mail') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
             <label for="usuario" class="label">Nome Completo</label> 
-            <input type="text" name="tutor_name" id="tutor_name" value="{{ $tutor->tutor_name ?? old('tutor_name') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
+            <input type="text" name="tutor_name" id="tutor_name" placeholder="nome" value="{{ $tutor->tutor_name ?? old('tutor_name') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
-            <label for="usuario" class="label">Numero de Cpf</label> 
-            <input type="text" name="tutor_cpf_number" id="tutor_cpf_number" value="{{ $tutor->tutor_cpf_number ?? old('tutor_cpf_number') }}" maxlength="11" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
+            <label for="usuario" class="label">Numero de Cpf <span class="pl-2 font-londrina text-sm text-black dark:text-white">  *Apenas numeros</span></label> 
+            <input type="text" name="tutor_cpf_number" id="tutor_cpf_number" placeholder="00000000000" value="{{ $tutor->tutor_cpf_number ?? old('tutor_cpf_number') }}" maxlength="11" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
             <label for="usuario" class="label">Data de nascimento</label> 
             <input type="date" name="tutor_birth_date" id="tutor_birth_date" value="{{ $tutor->tutor_birth_date ?? old('tutor_birth_date') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
@@ -99,8 +103,8 @@
             <label for="usuario" class="label">Numero de endereco</label> 
             <input type="text" name="adress_number" id="adress_number" value="{{ $tutor->address->adress_number ?? old('adress_number') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
-            <label for="usuario" class="label">CEP</label> 
-            <input type="text" name="cep_code" id="cep_code" maxlength="8" value="{{ $tutor->address->cep_code ?? old('cep_code') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
+            <label for="usuario" class="label">CEP <span class="pl-2 font-londrina text-sm text-black dark:text-white">  *Apenas numeros</span></label> 
+            <input type="text" name="cep_code" id="cep_code" plcaeholder="00000000" maxlength="8" value="{{ $tutor->address->cep_code ?? old('cep_code') }}" required autocomplete="off" class="inputBox bg-zinc-100 dark:bg-slate-100">
 
             <input type="button" value="Encontrar Endereço" id="fetchAddressBtn" class="blueButton rounded-md w-full"> <!-- Terminar o botao depois :( -->
 
@@ -120,8 +124,7 @@
 
             
 
-    <!-- Errors -->
-    <x-errors />
+
 
     <script>
         document.getElementById('fetchAddressBtn').addEventListener('click', function() {

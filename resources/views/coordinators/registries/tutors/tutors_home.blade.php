@@ -76,22 +76,28 @@
           <div class="col-span-4 flex items-center gap-2">
             <!-- Campo de pesquisa ocupando 75% -->
             <input 
-              type="text" 
+              type="text"
+              id = "searchInput"
               placeholder="Pesquisar..." 
-              class="flex-grow p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white mb-3" 
+              class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white mb-3" 
             />
 
             <!-- Botão com ícone de + ocupando 25% -->
-            <a href="{{ route('coordinators.registries.tutors.new') }}"><button 
-              class="w-16 font-bold h-full flex items-center justify-center bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 py-3 mb-3" 
-            >
-              +
-            </button></a>
+          <a href="#"><button 
+            class="w-16 font-bold h-full flex items-center justify-center bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 py-3 mb-3">
+            <i class="fas fa-filter py-1.8"></i>
+          </button></a>
+        </div> 
+        
+    
+        <div class="flex justify-center items-center">
+            <button class="blueButton rounded-xl sm:w-[50%] md:w-[35%] lg:w-[30%] "><a href="{{ route('coordinators.registries.tutors.new') }}">Cadastrar novo Tutor</a>
+            </button>
           </div>
           
-          <div class="grid gap-4 p-4 bg-gray-200 rounded-lg w-full dark:bg-gray-800">
+          <div id="tutorList"class="grid gap-4 p-4 bg-gray-200 rounded-lg w-full dark:bg-gray-800 mt-6">
             @foreach($tutors as $tutor)
-            <div class="bg-white p-4 rounded-lg shadow flex justify-between items-center dark:bg-gray-700">
+            <div class="tutor bg-white p-4 rounded-lg shadow flex justify-between items-center dark:bg-gray-700">
                 <div class="flex flex-col">
                     <h3 class="text-3xl font-semibold dark:text-white">{{ $tutor->tutor_name }}</h3>
                     <p class="mt-1 ml-0.5 text-gray-600 text-xl dark:text-gray-300"><span class="font-bold">Status:</span> {{ $tutor->is_active ? 'Active' : 'Inactive' }}</p>
@@ -106,5 +112,22 @@
         </div>
         @endif
     </div>
+
+    <script>
+      document.getElementById("searchInput").addEventListener("input", function() {
+        const filter = this.value.toLowerCase();
+        const tutors = document.querySelectorAll("#tutorList .tutor");
+
+        tutors.forEach(tutor => {
+          const name = tutor.querySelector("h3").textContent.toLowerCase();
+          if (name.includes(filter)) {
+            tutor.style.display = "flex";
+          } else {
+            tutor.style.display = "none";
+          }
+        });
+      });
+    </script>
+
 </main>
 </x-layout>

@@ -11,6 +11,8 @@ use App\Http\Controllers\TutorLoginController;
 use App\Http\Controllers\StudentLoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CepController;
+use App\Http\Controllers\ActivityController;
+
 
 //rota de visão para pagina home e realiza loggout automatico
 Route::get('/', function () {
@@ -338,6 +340,8 @@ Route::middleware(['auth'])->group(function () {
 
             //  ==================== VÍDEOS ====================
             Route::get('/videos/home', 'Videos_home_page')->name('videos.home');
+            
         });
-});
+});        
+
 

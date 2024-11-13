@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+* {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #87CEEB; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.game-container {
+    position: relative;
+    width: 50%;
+    flex-wrap: wrap;
+    height: 30rem;
+    margin: 2% auto;
+    max-width: 600px; 
+    background-image: url('images/fundo.png'); 
+    background-size: cover;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    border: 5px solid #fff; 
+    border-radius: 15px;
+}
+
+.voltar {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1em;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+    width: 3em;
+    margin-top: 1rem;
+    border-radius: 8px; 
+    transition: background-color 0.3s ease;
+}
+
+.voltar:hover {
+    background-color: red;
+}
+
+
+.animal {
+    width: 6.5vw; 
+    height: 7vw; 
+    background-size: cover; 
+    position: absolute; 
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+
+.animal:nth-child(1) {
+    background-image: url('images/vaca.png');
+}
+
+.animal:nth-child(2) {
+    background-image: url('images/monkey.png'); 
+}
+
+.animal:nth-child(3) {
+    background-image: url('images/lobo.png'); 
+}
+
+.animal:nth-child(4) {
+    background-image: url('images/gato.png'); 
+}
+
+.animal:nth-child(5) {
+    background-image: url('images/cabra.png'); 
+}
+
+
+.animal:hover {
+    transform: scale(1.1); 
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        width: 90%;
+        height: 25rem;
+        padding: 0.5rem;
+    }
+    .animal {
+        width: 16vw;
+        height: 17vw;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+    .game-container {
+        width: 90%;
+        height: 25rem;
+    }
+} 

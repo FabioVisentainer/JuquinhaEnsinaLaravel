@@ -10,7 +10,6 @@
       
         
         <!-- Div esquerda da nav -->
-      
         <div class="">
           <ul class="navText opacity-0 top-[120px] gap-4 sm:pointer-events-auto pointer-events-none">
           <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
@@ -77,22 +76,27 @@
           <div class="col-span-4 flex items-center gap-2">
             <!-- Campo de pesquisa ocupando 75% -->
             <input 
+              id="searchInput" 
               type="text" 
               placeholder="Pesquisar..." 
-              class="flex-grow p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white mb-3" 
+              class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white mb-3" 
             />
-
+            
             <!-- Botão com ícone de + ocupando 25% -->
-            <a href="{{ route('coordinators.registries.students.new') }}"><button 
-              class="w-16 font-bold h-full flex items-center justify-center bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 py-3 mb-3" 
-            >
-              +
+            <a href="#"><button 
+              class="w-16 font-bold h-full flex items-center justify-center bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 py-3 mb-3">
+              <i class="fas fa-filter py-1.8"></i>
             </button></a>
+          </div> 
+
+          <div class="flex justify-center items-center">
+            <button class="blueButton rounded-xl sm:w-[50%] md:w-[35%] lg:w-[30%] "><a href="{{ route('coordinators.registries.students.new') }}">Cadastrar novo aluno</a>
+            </button>
           </div>
           
-          <div class="grid gap-4 p-4 bg-gray-200 rounded-lg w-full dark:bg-gray-800">
+          <div id="studentList" class="grid gap-4 p-4 bg-gray-200 rounded-lg w-full dark:bg-gray-800 mt-6">
             @foreach($students as $student)
-            <div class="bg-white p-4 rounded-lg shadow flex justify-between items-center dark:bg-gray-700">
+            <div class="student bg-white p-4 rounded-lg shadow flex justify-between items-center dark:bg-gray-700">
                 <div class="flex flex-col">
                     <h3 class="text-3xl font-semibold dark:text-white">{{ $student->student_name }}</h3>
                     <p class="mt-1 ml-0.5 text-gray-600 text-xl dark:text-gray-300"><span class="font-bold">Status:</span> {{ $student->is_active ? 'Active' : 'Inactive' }}</p>
@@ -107,8 +111,25 @@
                 </div>
             </div>
             @endforeach
-        </div>
+          </div>
         @endif
     </div>
+
+
+    <script>
+      document.getElementById("searchInput").addEventListener("input", function() {
+        const filter = this.value.toLowerCase();
+        const students = document.querySelectorAll("#studentList .student");
+
+        students.forEach(student => {
+          const name = student.querySelector("h3").textContent.toLowerCase();
+          if (name.includes(filter)) {
+            student.style.display = "flex";
+          } else {
+            student.style.display = "none";
+          }
+        });
+      });
+    </script>
 </main>
 </x-layout>

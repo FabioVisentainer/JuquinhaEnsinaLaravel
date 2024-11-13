@@ -28,15 +28,15 @@
         </div>
         <div class="dadCards">
           <div class="card bg-[#FFEEB1] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(255,232,150,0.5)]">
-            <a href="{{ route('login.tutor') }}"><img class="p-8" src="./images/Responsaveis.png" alt="Responsaveis" width="350px"><p class="text-4xl p-2 sm:text-5xl">Responsaveis</p></a>
+            <a href="{{ route('login.tutor') }}"><img class="p-8" src="./images/Responsaveis.png" alt="Responsaveis" width="350px"><p class="text-4xl p-2 sm:text-5xl drop-shadow-lg">Responsaveis</p></a>
           </div>
   
           <div class="card bg-[#C5B9EF] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(148,119,252,0.5)]">
-            <a href="{{ route('login.student') }}"><img class="p-8" src="./images/aluno.png" alt="Responsaveis" width="350px"><p class="text-5xl p-2 sm:text-6xl">Alunos</p></a>
+            <a href="{{ route('login.student') }}"><img class="p-8" src="./images/aluno.png" alt="Responsaveis" width="350px"><p class="text-4xl p-2 sm:text-5xl drop-shadow-lg">Alunos</p></a>
           </div>
   
           <div class="card bg-[#BEF1EE] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(176,255,250,0.5)]">
-            <a href="{{ route('login.teacher') }}"><img class="p-8" src="./images/Professores.png" alt="Responsaveis" width="350px"><p class="text-4xl p-2 sm:text-5xl">Docentes</p></a>
+            <a href="{{ route('login.teacher') }}"><img class="p-8" src="./images/Professores.png" alt="Responsaveis" width="350px"><p class="text-4xl p-2 sm:text-5xl drop-shadow-lg">Docentes</p></a>
           </div>
         </div>
       </div>

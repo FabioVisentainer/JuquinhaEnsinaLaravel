@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+canvas {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    height: 400px;
+}
+
+.tools-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.caixa-ferramentas {
+    display: flex;
+    gap: 10px;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    border-radius: 20px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.botao__ferramenta, .botao__tamanho, .botao__voltar, .botao__limpar {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.botao__ferramenta:hover, .botao__tamanho:hover {
+    background-color: yellowgreen;
+}
+
+.botao__voltar:hover, .botao__limpar:hover {
+    background-color: red;
+}
+
+.entrada__cor {
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.entrada__cor::-webkit-color-swatch {
+    border-radius: 100px;
+}
+
+.botao__tamanho > span {
+    width: 100%;
+    background-color: #000;
+    border-radius: 100px;
+    display: block;
+}
+
+.botao__tamanho[data-tamanho="5"] > span {
+    height: 5px;
+}
+
+.botao__tamanho[data-tamanho="10"] > span {
+    height: 10px;
+}
+
+.botao__tamanho[data-tamanho="20"] > span {
+    height: 20px;
+}
+
+.botao__tamanho[data-tamanho="30"] > span {
+    height: 30px;
+}
+
+.ativa {
+    background-color: greenyellow;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+
+    canvas {
+        width: 100%;
+        height: 350px;
+    }
+
+    .tools-container {
+        gap: 8px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    canvas {
+        height: 300px;
+    }
+
+    .tools-container {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 90%;
+    }
+
+    canvas {
+        height: 250px;
+    }
+
+    .botao__ferramenta, .botao__tamanho, .botao__voltar, .botao__limpar, .entrada__cor {
+        width: 15px;
+        height: 15px;
+    }
+
+    .botao__ferramenta:hover, 
+    .botao__tamanho:hover,
+    .botao__voltar:hover, 
+    .botao__limpar:hover {
+        transform: scale(1.5); 
+    }
+}
+
+

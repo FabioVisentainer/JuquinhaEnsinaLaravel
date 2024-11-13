@@ -102,31 +102,31 @@
                     <div class="card bg-[#FFEEB1] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(255,232,150,0.5)]">
                         <a href="{{ route('tutors.homework.table', [$studentUserId]) }}">
                             <img class="p-8" src="{{ asset('images/atividades.png') }}" alt="Atividades" width="350px">
-                            <p class="text-3xl p-2 sm:text-4xl">Ver Atividades</p>
+                            <p class="text-3xl p-2 sm:text-4xl drop-shadow-lg">Ver Atividades</p>
                         </a>
                     </div>
                     <div class="card bg-[#C5B9EF] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(148,119,252,0.5)]">
                         <a href="{{ route('tutors.activity.table', [$studentUserId]) }}">
                             <img class="p-8" src="{{ asset('images/tarefas.png') }}" alt="Tarefas" width="350px">
-                            <p class="text-3xl p-2 sm:text-4xl">Ver Tarefas</p>
+                            <p class="text-3xl p-2 sm:text-4xl drop-shadow-lg">Ver Tarefas</p>
                         </a>
                     </div>
                     <div class="card bg-[#BEF1EE] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(176,255,250,0.5)]">
                         <a href="{{ route('tutors.reports.home', [$studentUserId]) }}">
                             <img class="p-8" src="{{ asset('images/frequencia.png') }}" alt="Videos" width="350px">
-                            <p class="text-3xl p-2 sm:text-4xl">Desempenho do Aluno</p>
+                            <p class="text-3xl p-2 sm:text-4xl drop-shadow-lg">Desempenho do Aluno</p>
                         </a>
                     </div>
                     <div class="card bg-[#B9CAEF] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(0, 102, 204, 0.5)]">
                         <a href="{{ route('tutors.videos.home', [$studentUserId]) }}">
                             <img class="p-8" src="{{ asset('images/videos(blue).png') }}" alt="Tarefas" width="350px">
-                            <p class="text-3xl p-2 sm:text-4xl">Ver videos</p>
+                            <p class="text-3xl p-2 sm:text-4xl drop-shadow-lg">Ver videos</p>
                         </a>
                     </div>
                     <div class="card bg-[#FFB1B2] drop-shadow-2xl dark:drop-shadow-[0_0px_30px_rgba(255, 0, 0)]">
                         <a href="{{ route('tutors.grades.table', [$studentUserId]) }}">
                             <img class="p-8" src="{{ asset('images/boletim.png') }}" alt="Videos" width="350px">
-                            <p class="text-3xl p-2 sm:text-4xl">Consultar Boletim</p>
+                            <p class="text-3xl p-2 sm:text-4xl drop-shadow-lg">Consultar Boletim</p>
                         </a>
                     </div>
 

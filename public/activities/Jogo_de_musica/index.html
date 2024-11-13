@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Música</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <div class="animal" id="animal1" data-sound="sound1"></div>
+        <div class="animal" id="animal2" data-sound="sound2"></div>
+        <div class="animal" id="animal3" data-sound="sound3"></div>
+        <div class="animal" id="animal4" data-sound="sound4"></div>
+        <div class="animal" id="animal5" data-sound="sound5"></div>
+    </div>
+
+    <audio id="sound1" src="sounds/vaca.mp3"></audio>
+    <audio id="sound2" src="sounds/monkey.mp3"></audio>
+    <audio id="sound3" src="sounds/wolf.mp3"></audio>
+    <audio id="sound4" src="sounds/gato.mp3"></audio>
+    <audio id="sound5" src="sounds/cabra.mp3"></audio>
+
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

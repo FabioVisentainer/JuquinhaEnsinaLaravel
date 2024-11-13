@@ -23,6 +23,9 @@ export default {
             'lg': '1280px',
             // => @media (min-width: 1280px) { ... }
           },
+          spacing: {
+            '1.8px': '1.8px',
+          },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 londrina: ['Londrina Solid', 'sans-serif'],

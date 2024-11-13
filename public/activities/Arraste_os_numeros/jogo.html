@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo de Correspondência</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+</head>
+<body>
+    <div class="cabecalho">
+        <button class="voltar" onclick="location.href='index.html'">
+            <span class="material-symbols-outlined">keyboard_return</span>
+        </button>
+        <div class="Tempo" id="timer">Tempo:<br> 0 segundos</div>
+    </div>
+    <section>
+        <div class="hands">
+            <div class="hand-image" id="hand1">
+                <img src=".//images/hand01.png" alt="hand" height="85px" width="85px">
+            </div>
+            <div class="hand-image" id="hand2">
+                <img src=".//images/hand2.png" alt="hand" height="85px" width="85px">
+            </div>
+            <div class="hand-image" id="hand3">
+                <img src=".//images/hand03.png" alt="hand" height="85px" width="85px">
+            </div>
+            <div class="hand-image" id="hand4">
+                <img src=".//images/hand04.png" alt="hand" height="85px" width="85px">
+            </div>
+            <div class="hand-image" id="hand5">
+                <img src=".//images/hand05.png" alt="hand" height="85px" width="85px">
+            </div>
+        </div>
+        <div class="numbers">
+            <div class="number" id="number1" draggable="true">1</div>
+            <div class="number" id="number2" draggable="true">2</div>
+            <div class="number" id="number3" draggable="true">3</div>
+            <div class="number" id="number4" draggable="true">4</div>
+            <div class="number" id="number5" draggable="true">5</div>
+        </div>   
+    </section>
+    <div class="tela-fim-jogo">
+        <h2>Parabéns! Você venceu!</h2>
+        <p id="tempo-final">Tempo final: 0s</p>
+        <p id="pontuacao-final">Você completou o desafio!</p>
+        <button id="jogar-novamente">Jogar novamente</button>
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

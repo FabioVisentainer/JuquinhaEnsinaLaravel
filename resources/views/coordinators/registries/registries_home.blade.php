@@ -1,4 +1,5 @@
 <x-layout>
+<body class="body bg-slate-50">
   <nav class="flex justify-between items-center">
     <div class="p-5 md:flex md:justify-between max-[770px]:hidden">
       <div class="max-[770px]:hidden">
@@ -51,7 +52,7 @@
             <img id="notificationIcon" class="invertColor cursor-pointer" src="{{ asset('images/notificacao.png') }}" alt="Botao de notificacoes" width="40px">
           </a>
       </div>
-
+      
       <div>
         <img src="../images/skillos.png" alt="Company image" width="40px">
       </div>

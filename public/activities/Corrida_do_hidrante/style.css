@@ -1,0 +1,273 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+}
+
+.game-board {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 70%;
+    height: 70vh;
+    border: 15px solid green;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.timer {  
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 22px; 
+    background-color: green;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 3px; 
+    width: 15vh;
+    animation: pipe-animation 5s infinite linear;
+}
+
+.mario {
+    width: 15vw;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 1.5s ease-out; 
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -10vw;
+    }
+    to {
+        right: 70vw;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 120px; 
+    }
+    100% {
+        bottom: 0; 
+    }
+}
+
+.tree {
+    position: absolute;
+    bottom: 17px;
+    width: 300px;
+    animation: tree-animation 18s infinite linear; 
+}
+
+@keyframes tree-animation {
+    from {
+        right: -600px; 
+    }
+    to {
+        right: 100%; 
+    }
+}
+
+.material-symbols-outlined{
+    font-size: 3vw;
+}
+
+.clouds {
+    position: absolute;
+    width: 200px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+
+.game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Londrina Solid";
+    font-size: 5vh;
+    z-index: 10;
+    display: none;
+}
+
+h2 {
+    letter-spacing: 6px;
+    line-height: 100px;
+}
+
+p#novamente {
+    line-height: 100px;
+}
+.game-over-screen.show {
+    display: flex;
+}
+
+.timer, .score, .voltar {
+    font-family: "Londrina Solid";
+    position: absolute;
+    top: 20px;
+    font-size: 2vw;
+    color: black;
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+div a {
+    text-decoration: none;
+}
+
+.voltar {
+    left: 20px;
+    padding: 5px 10px;
+    font-size: 1vw;
+    transition: background-color 0.3s ease;
+}
+
+.voltar:hover {
+    background-color: yellowgreen;
+}
+
+.timer {
+    left: 140px;
+}
+
+.score {
+    right: 100px;
+}
+
+.pipe, .coin {
+    position: absolute;
+}
+
+.coin {
+    width: 5vw;
+    bottom: 20vh;
+    animation: coin-animation 5s infinite linear;
+}
+
+@keyframes coin-animation {
+    from {
+        right: -5vw;
+    }
+    to {
+        right: 70vw;
+    }
+}
+
+.bird {
+    position: absolute;
+    bottom: 40vh;
+    width: 8vw;
+    animation: tree-animation 6s infinite linear; 
+    transform: scaleX(-1)
+}
+
+@keyframes bird-animation {
+    from {
+        right: -600px; 
+    }
+    to {
+        right: 100%; 
+    }
+
+}
+
+
+@media (min-width: 319px) and (max-width: 426px){
+    .game-over-screen {
+        font-size: 2vh;
+    }
+    .material-symbols-outlined{
+        font-size: 2vh;
+    }
+    .mario {
+        width: 90px;
+        bottom: 10px;
+    }
+    .pipe {
+        bottom: 10px; 
+        width: 90px;
+        height: 60px;
+    }
+    .coin {
+        width: 30px;
+        height: 20px;
+        bottom: 90px;
+        animation: coin-animation 3s infinite linear;
+    }
+    .score {
+        right: 30px;
+    }
+    .tree {
+        width: 60vw;
+    }
+
+    @keyframes pipe-animation {
+        from {
+            right: -300px;
+        }
+    
+        to {
+            right: 100%;
+        }
+    }
+    
+    .game-board {
+        width: 90%;
+        height: 80vh;
+    }
+}

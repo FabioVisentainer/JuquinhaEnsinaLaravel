@@ -83,35 +83,37 @@
 
     <h2 class="pageTitle text-4xl md:text-6xl">Alunos associados</h2>
         <div>
-            <div class="flex flex-col items-center justify-center">
-                <a href="{{ route('coordinators.registries.tutors.selectStudents', $tutor->tutor_id) }}" class="border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 rounded-lg px-4 py-2 transition duration-150 ease-in-out">
-                    Select Students
-                </a>
+    <div class="flex flex-col items-center justify-center mb-6">
+        <a href="{{ route('coordinators.registries.tutors.selectStudents', $tutor->tutor_id) }}" class="border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 rounded-lg px-4 py-2 transition duration-150 ease-in-out">
+            Selecionar Alunos
+        </a>
+    </div>
+
+    <!-- Espaçamento adicional usando mt-4 -->
+    <div class="grid gap-4 p-4 bg-gray-200 rounded-lg w-full dark:bg-gray-800 md:w-3/4 lg:w-1/2 mx-auto mt-4">
+        @if($associatedStudents->isEmpty())
+            <p class="text-gray-600 dark:text-gray-300">No students associated with this tutor.</p>
+        @else
+            @foreach($associatedStudents as $associatedStudent)
+                <div class="bg-white p-4 rounded-lg shadow flex justify-between items-center dark:bg-gray-700 w-full">
+                    <div class="flex flex-col mr-4">
+                        <h3 class="text-2xl font-semibold dark:text-white">{{ $associatedStudent->student->student_name }}</h3>
+                        <p class="mt-1 ml-0.5 text-gray-600 text-lg dark:text-gray-300"><span class="font-bold">Genero:</span> {{ $associatedStudent->student->student_gender }}</p>
+                        <p class="text-gray-600 dark:text-gray-300"><span class="font-bold ml-0.5">Data de Registro:</span> {{ $associatedStudent->student->student_registry_date }}</p>
+                    </div>
+                    <form action="{{ route('coordinators.registries.tutors.deleteStudents', [$tutor->tutor_id, $associatedStudent->student_user_id]) }}" method="POST" class="flex-shrink-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-500 text-white rounded-xl px-4 py-2 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+                            Deletar
+                        </button>
+                    </form>
                 </div>
-        
-                <div class="grid gap-4 p-4 bg-gray-200 rounded-lg w-full dark:bg-gray-800 md:w-3/4 lg:w-1/2 mx-auto">
-                    @if($associatedStudents->isEmpty())
-                        <p class="text-gray-600 dark:text-gray-300">No students associated with this tutor.</p>
-                    @else
-                        @foreach($associatedStudents as $associatedStudent)
-                            <div class="bg-white p-4 rounded-lg shadow flex justify-between items-center dark:bg-gray-700 w-full">
-                                <div class="flex flex-col mr-4">
-                                    <h3 class="text-2xl font-semibold dark:text-white">{{ $associatedStudent->student->student_name }}</h3>
-                                    <p class="mt-1 ml-0.5 text-gray-600 text-lg dark:text-gray-300"><span class="font-bold">Gender:</span> {{ $associatedStudent->student->student_gender }}</p>
-                                    <p class="text-gray-600 dark:text-gray-300"><span class="font-bold ml-0.5">Registry Date:</span> {{ $associatedStudent->student->student_registry_date }}</p>
-                                </div>
-                                <form action="{{ route('coordinators.registries.tutors.deleteStudents', [$tutor->tutor_id, $associatedStudent->student_user_id]) }}" method="POST" class="flex-shrink-0">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="bg-red-500 text-white rounded-xl px-4 py-2 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
-                                        Remove
-                                    </button>
-                                </form>
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
-        </div>
+            @endforeach
+        @endif
+    </div>
+</div>
+
         {{-- <a href="{{ route('coordinators.registries.tutors.selectStudents', $tutor->tutor_id) }}">Select Students</a> --}}
 
         <br><br>

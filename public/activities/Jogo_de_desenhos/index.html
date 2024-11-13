@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Paint</title>
+</head>
+<body>
+    <section class="container">
+        <div class="tools-container">
+            <section class="caixa-ferramentas">
+                <button class="botao__ferramenta ativa" data-acao="pincel">
+                    <span class="material-symbols-outlined">brush</span>
+                </button>
+
+                <button class="botao__ferramenta" data-acao="borracha">
+                    <span class="material-symbols-outlined">ink_eraser</span>
+                </button>
+
+                <button class="botao__ferramenta">
+                    <input type="color" class="entrada__cor">
+                </button>
+            </section>
+
+            <section class="caixa-ferramentas">
+                <button class="botao__tamanho" data-tamanho="5">
+                    <span class="stroke"></span>
+                </button>
+
+                <button class="botao__tamanho" data-tamanho="10">
+                    <span class="stroke"></span>
+                </button>
+
+                <button class="botao__tamanho ativa" data-tamanho="20">
+                    <span class="stroke"></span>
+                </button>
+
+                <button class="botao__tamanho" data-tamanho="30">
+                    <span class="stroke"></span>
+                </button>
+            </section>
+
+            <section class="caixa-ferramentas">
+                <button class="botao__ferramenta botao__limpar">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+            </section>
+        </div>
+
+        <canvas width="900" height="600"></canvas>
+    </section>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Londrina Solid";
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightblue;
+}
+h1 {
+    color: #333;
+    margin-top: 20px;
+    font-family: 'Londrina Solid';
+}
+#score {
+    font-size: 1.5em;
+    margin: 10px;
+}
+#gameArea {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+}
+.bubble {
+    position: absolute;
+    width: 200px; /* Tamanho da bolha duplicado */
+    height: 200px; /* Tamanho da bolha duplicado */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3em; /* Aumenta o tamanho da letra para caber na bolha maior */
+    cursor: pointer;
+    user-select: none;
+    animation: floatUp 5s linear infinite;
+}
+@keyframes floatUp {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-100vh); }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .bubble {
+        width: 50px; /* Reduz o tamanho da bolha em telas menores */
+        height: 50px;
+        font-size: 1.2em; /* Ajusta o tamanho da fonte */
+    }
+}
+
+
+#parabensScreen {
+    display: none;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#parabensScreen h2 {
+    color: #4CAF50;
+    font-size: 2em;
+}
+#parabensScreen button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#parabensScreen button:hover {
+    background-color: #45a049;
+}
+
+#parabensScreen .errorMessage {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+/* Jogo 3 */
+
+.cabecalho {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    justify-content: center;
+    width: 100%; 
+    gap: 20em; 
+    margin-bottom: 2%;
+}
+
+.cronometro {
+    font-size: 1.2em; 
+}
+
+.voltar {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1.5em;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+    width: 3em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.voltar:hover {
+    background-color: red;
+}
+
+.tela-fim-jogo {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Londrina Solid";
+    font-size: 4.5vh;
+    display: none;
+    white-space: normal;
+}
+
+.tela-fim-jogo.mostrar {
+    display: flex;
+}
+
+#jogar-novamente {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: lightgreen;
+    border-radius: 8px;
+    font-size: 2vh;
+    margin-top: 20px;
+}
+
+#jogar-novamente:hover {
+    background-color: yellowgreen;
+}
+
+.tela-fim-jogo h2 {
+    font-size: 1em;
+    word-break: break-word;
+}
+
+@media (max-width: 426px) {
+
+    .cabecalho {
+        gap: 3rem;
+        font-size: 0.7rem;
+    }
+
+    .voltar {
+        font-size: 1em;
+    }
+}
+@media (min-width: 426px) and (max-width: 1025px) {
+    .cabecalho {
+        font-size: 1rem;
+        gap: 10rem;
+    }
+}

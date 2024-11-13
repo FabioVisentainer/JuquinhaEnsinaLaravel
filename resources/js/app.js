@@ -42,60 +42,55 @@ const themeSwitch = () => {
 };
 
 // Chamar a troca de tema ao clicar nos botões
-sunIcon.addEventListener("click", () => {
-    themeSwitch();
-});
-moonIcon.addEventListener("click", () => {
-    themeSwitch();
-});
-
+sunIcon.addEventListener("click", themeSwitch);
+moonIcon.addEventListener("click", themeSwitch);
 
 // Toggle do ícone do hambúrguer
 const hamburguerToggle = () => {
     hamburgerIcon.classList.toggle("hidden");
     xIcon.classList.toggle("hidden");
     list.classList.toggle("opacity-100");
-    list.classList.toggle("top-[80px]");
 };
 
 // Evento de clique para abrir o menu e mudar o ícone
 hamburgerIcon.addEventListener("click", () => {
-    hamburguerToggle(); // Alterna os ícones
-    onToggleMenu(this); 
+    hamburguerToggle();
+    onToggleMenu(hamburgerIcon);
 });
 
 // Evento de clique para fechar o menu e mudar o ícone
 xIcon.addEventListener("click", () => {
-    hamburguerToggle(); // Alterna os ícones de volta 
-    onToggleMenu(this) 
+    hamburguerToggle();
+    onToggleMenu(hamburgerIcon);
 });
 
-// 
+// Função para alternar o menu usando data-name
+function onToggleMenu(element) {
+    // Inicializando `data-name` se não estiver presente
+    if (!element.dataset.name) {
+        element.dataset.name = "menu";
+    }
 
+    // Alterna entre "menu" e "close"
+    element.dataset.name = element.dataset.name === "menu" ? "close" : "menu";
 
-function onToggleMenu(e){
-    e.name = e.name === 'menu' ? 'close' : 'menu';
-    // Se for o botão de close, fecha o menu
-    if (e.name === 'menu') {
-        // Remove as classes anteriores
-        list.classList.remove('top-[20px]', 'opacity-100');
-        list.classList.add('top-[-120px]', 'opacity-0'); // Volta ao estado inicial
-        list.classList.remove('pointer-events-auto');
-        list.classList.add('pointer-events-none'); 
-        total.classList.remove('top-96'); 
-        total.classList.add('top-1');// 
+    if (element.dataset.name === "menu") {
+        // Fechar o menu: removendo classes de visibilidade e interatividade
+        list.classList.remove("top-[90px]", "opacity-100", "pointer-events-auto");
+        list.classList.add("top-[-120px]", "opacity-0", "pointer-events-none");
 
+        // Ajustando a posição do total
+        total.classList.remove('top-96');
+        total.classList.add('top-1');
     } else {
-        // Se estiver abrindo o menu
-        list.classList.remove('top-[-120px]', 'opacity-0'); // Remove as classes de estado inicial
-        list.classList.add('top-[20px]', 'opacity-100'); // Adiciona classes para abrir o menu
-        list.classList.remove('pointer-events-none');
-        list.classList.add('pointer-events-auto'); 
-        total.classList.remove('top-1'); 
+        // Abrir o menu: adicionando classes de visibilidade e interatividade
+        list.classList.remove("top-[-120px]", "opacity-0", "pointer-events-none");
+        list.classList.add("top-[90px]", "opacity-100", "pointer-events-auto");
+
+        // Ajustando a posição do total
+        total.classList.remove('top-1');
         total.classList.add('top-96');
     }
 }
 // Invocar o check de tema no carregamento inicial
 themeCheck();
-
-
