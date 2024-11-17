@@ -1,54 +1,55 @@
 <x-layout>
     <body class="body bg-slate-50">
         <nav class="flex justify-between items-center">
-        <div class="p-5 md:flex md:justify-between max-[770px]:hidden">
-          <div class="max-[770px]:hidden">
-            <!-- Div do botao de voltar -->
-            <a href="{{ route('teachers.home') }}"><img class="invertColor cursor-pointer pointer-events-auto" src="{{ asset('images/voltar.png') }}" alt="Botao de voltar a pagina" width="40px"></a>
-          </div>
-        </div>
-      
+            <div class="p-5 md:flex md:justify-between max-[770px]:hidden">
+                <div class="max-[770px]:hidden">
+                    <!-- Div do botão de voltar -->
+                    <a href="{{ route('teachers.home') }}">
+                        <img class="invertColor cursor-pointer pointer-events-auto" src="{{ asset('images/voltar.png') }}" alt="Botão de voltar à página" width="40px">
+                    </a>
+                </div>
+            </div>
         
-        <!-- Div esquerda da nav -->
-      
-        <div class="">
-          <ul class="navText opacity-0 top-[120px] gap-4 sm:pointer-events-auto pointer-events-none">
-          <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
-            <a href="{{ route('teachers.home') }}"><p class="navTitle">Inicio</p></a>
-          </li>
-          <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
-            <a href="{{ route('teachers.activity.home') }}"><p class="navTitle">Liberar Atividades</p></a>
-          </li>
-          <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
-            <a href="{{ route('teachers.homework.home') }}"><p class="navTitle">Liberar Tarefas</p></a>
-          </li>
-          <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
-            <a href="{{ route('teachers.frequency.home') }}"><p class="navTitle">Registrar Frequência</p></a>
-          </li>
-          <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
-            <a href="{{ route('teachers.grades.home') }}"><p class="navTitle">Registrar Boletim</p></a>
-          </li>
-          <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
-            <a href="{{ route('teachers.videos.home') }}"><p class="navTitle">Enviar Videos</p></a>
-          </li>
-        </ul>
-        </div>
-        <div>
-            <img class="hamburger invertColor cursor-pointer transition-all ease-out duration-500 md:hidden block max-[800px]:ml-3" src="{{ asset('images/hamburger.png') }}" alt="Hamburger" width="45px">
-            <img class="x invertColor cursor-pointer hidden transition-all ease-linear duration-500 md:hidden max-[800px]:ml-3" src="{{ asset('images/x.png') }}" alt="Exit hamburguer" width="30px">
-          </div>
-      
-        <div class="flex gap-8 p-5">
-          <!-- Div direita da nav -->
-          <div>
-            <img class="moon cursor-pointer drop-shadow-[0_0px_16px_rgba(4,15,140)]" src="{{ asset('images/lua.png') }}" alt="" width="40px">
-            <img class="sun cursor-pointer dark:drop-shadow-[0_0px_30px_rgba(255,232,150)] hidden" src="{{ asset('images/sol.png') }}" alt="" width="40px">
-          </div>
-      
-          <div>
-            <img src="{{ asset('images/skillos.png') }}" alt="Company image" width="40px">
-          </div>
-        </div>
+            <!-- Div esquerda da nav -->
+            <div>
+                <ul class="navText opacity-0 top-[120px] gap-4 sm:pointer-events-auto pointer-events-none">
+                    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+                        <a href="{{ route('teachers.home') }}"><p class="navTitle">Início</p></a>
+                    </li>
+                    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+                        <a href="{{ route('teachers.activity.home') }}"><p class="navTitle">Liberar Atividades</p></a>
+                    </li>
+                    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+                        <a href="{{ route('teachers.homework.home') }}"><p class="navTitle">Liberar Tarefas</p></a>
+                    </li>
+                    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+                        <a href="{{ route('teachers.frequency.home') }}"><p class="navTitle">Registrar Frequência</p></a>
+                    </li>
+                    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+                        <a href="{{ route('teachers.grades.home') }}"><p class="navTitle">Registrar Boletim</p></a>
+                    </li>
+                    <li class="max-[1200px]:mx-1 z-10 mx-4 my-6 md:my-0">
+                        <a href="{{ route('teachers.videos.home') }}"><p class="navTitle">Enviar Vídeos</p></a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                <img class="hamburger invertColor cursor-pointer transition-all ease-out duration-500 md:hidden block max-[800px]:ml-3" src="{{ asset('images/hamburger.png') }}" alt="Hamburger" width="45px">
+                <img class="x invertColor cursor-pointer hidden transition-all ease-linear duration-500 md:hidden max-[800px]:ml-3" src="{{ asset('images/x.png') }}" alt="Exit hamburger" width="30px">
+            </div>
+        
+            <div class="flex gap-8 p-5">
+                <!-- Div direita da nav -->
+                <div>
+                    <img class="moon cursor-pointer drop-shadow-[0_0px_16px_rgba(4,15,140)]" src="{{ asset('images/lua.png') }}" alt="" width="40px">
+                    <img class="sun cursor-pointer dark:drop-shadow-[0_0px_30px_rgba(255,232,150)] hidden" src="{{ asset('images/sol.png') }}" alt="" width="40px">
+                </div>
+        
+                <div>
+                    <img src="{{ asset('images/skillos.png') }}" alt="Company image" width="40px">
+                </div>
+            </div>
         </nav>
 
         <div class="total relative top-1 transition-all duration-300 ease-in-out">
@@ -68,10 +69,10 @@
                     <div class="col-span-4 flex items-center gap-2">
                         <!-- Campo de pesquisa ocupando 75% -->
                         <input 
-                        id="searchInput" 
-                        type="text" 
-                        placeholder="Pesquisar..." 
-                        class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white mb-3" 
+                            id="searchInput" 
+                            type="text" 
+                            placeholder="Pesquisar..." 
+                            class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white mb-3" 
                         />
         
                         <!-- Botão com ícone de + ocupando 25% -->
@@ -96,60 +97,23 @@
                         @endforeach
                     </div>
                 </div>
-                <script>
-    document.getElementById("searchInput").addEventListener("input", function() {
-        const filter = this.value.toLowerCase();
-        const classes = document.querySelectorAll("#classList .class"); // Alteração na variável para evitar conflito
 
-        classes.forEach((classe) => { // Usando "classe" para evitar conflito com a palavra "class"
-            const name = classe.querySelector("h3").textContent.toLowerCase();
-            if (name.includes(filter)) {
-                classe.style.display = "flex";
-            } else {
-                classe.style.display = "none";
-            }
-        });
-    });
-</script>
+                <script>
+                    document.getElementById("searchInput").addEventListener("input", function() {
+                        const filter = this.value.toLowerCase();
+                        const classes = document.querySelectorAll("#classList .class"); // Alteração na variável para evitar conflito
+
+                        classes.forEach((classe) => { // Usando "classe" para evitar conflito com a palavra "class"
+                            const name = classe.querySelector("h3").textContent.toLowerCase();
+                            if (name.includes(filter)) {
+                                classe.style.display = "flex";
+                            } else {
+                                classe.style.display = "none";
+                            }
+                        });
+                    });
+                </script>
             @endif
         </div>
-        
-
-
-{{-- <a href="{{ route('teachers.home') }}">Voltar</a><br><br> --}}
-{{-- <h1>Liberação de Tarefas</h1>
-
-@if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-@if($classes->isEmpty())
-    <p>Sem Turmas disponíveis para este Professor.</p>
-@else
-    <table>
-        <thead>
-            <tr>
-                <th>Class Name</th>
-                <th>Class Year</th>
-                <th>Created Date</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($classes as $class)
-                <tr>
-                    <td>{{ $class->class_name }}</td>
-                    <td>{{ $class->class_year }}</td>
-                    <td>{{ $class->created_at }}</td>
-                    <td>
-                        <a href="{{ route('teachers.homework.table', [$class->class_id]) }}">Selecionar</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endif --}}
-
+    </body>
 </x-layout>

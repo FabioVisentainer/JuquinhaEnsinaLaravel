@@ -136,10 +136,10 @@
                         reportHtml += '<div class="overflow-x-auto sm:overflow-hidden">';
                         reportHtml += '<table class="min-w-full bg-white dark:bg-gray-700 border border-gray-300 rounded-md shadow-md mt-4"><thead><tr><th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-white">Atividade</th><th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-white">Total de Conclusões</th></tr></thead><tbody>';
                         data.yearsData.forEach(activity => {
-                            reportHtml += `<tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                            reportHtml += <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-600">
                                                <td class="px-4 py-2 text-sm text-gray-700 dark:text-white">${activity.activity_name}</td>
                                                <td class="px-4 py-2 text-sm text-gray-700 dark:text-white">${activity.total_times_completed}</td>
-                                             </tr>`;
+                                             </tr>;
                         });
                         reportHtml += '</tbody></table>';
                         reportHtml += '</div>';
@@ -149,11 +149,11 @@
                         reportHtml += '<div class="overflow-x-auto sm:overflow-hidden">';
                         reportHtml += '<table class="min-w-full bg-white dark:bg-gray-700 border border-gray-300 rounded-md shadow-md mt-4"><thead><tr><th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-white">Aluno</th><th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-white">Atividade</th><th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-white">Total de Conclusões</th></tr></thead><tbody>';
                         data.activitiesData.forEach(student => {
-                            reportHtml += `<tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                            reportHtml += <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-600">
                                                <td class="px-4 py-2 text-sm text-gray-700 dark:text-white">${student.student_name}</td>
                                                <td class="px-4 py-2 text-sm text-gray-700 dark:text-white">${student.activity_name}</td>
                                                <td class="px-4 py-2 text-sm text-gray-700 dark:text-white">${student.total_times_completed}</td>
-                                             </tr>`;
+                                             </tr>;
                         });
                         reportHtml += '</tbody></table>';
                         reportHtml += '</div>';
@@ -211,4 +211,4 @@
         }
     </script>
     
-</x-layout>
+</x-layout> 

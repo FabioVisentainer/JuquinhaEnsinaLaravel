@@ -67,11 +67,6 @@
                 </div>
             </div>
         </nav>
-    {{-- <a href="{{ route('tutors.home.student.get', [$studentUserId]) }}">Voltar</a><br><br>
-    <h1>Boletim - {{ $student->student_name }}</h1>
-
-    <p>Student user ID: {{ $studentUserId }}</p>
-    <p>Student Name: {{ $student->student_name }}</p> --}}
 
     <main>
         <div class="total relative top-1 transition-all duration-300 ease-in-out">
